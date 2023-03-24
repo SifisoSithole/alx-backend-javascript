@@ -19,10 +19,14 @@ export default class Pricing {
   }
 
   set currency(cur) {
-    this._currency = cur;
+    if (cur instanceof Currency) this._currency = cur;
   }
 
   displayFullPrice() {
     return `${this._amount} ${this._currency.displayFullCurrency()}`;
+  }
+
+  convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
   }
 }
