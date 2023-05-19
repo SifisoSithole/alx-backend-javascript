@@ -15,6 +15,7 @@ function countStudents(path) {
           const getLines = () => {
             for (const line of lines) {
               numberStudents += 1;
+              // eslint-disable-next-line no-unused-vars
               const [firstName, lastName, age, field] = line.split(',');
               if (field !== 'field') {
                 if (field in groupedFields) {
